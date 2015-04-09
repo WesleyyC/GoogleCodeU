@@ -41,25 +41,42 @@ public class BinaryTreeNode{
 	}
 
 	// flattern method, which will contain its' children nodes values
-	public List<String> flatten(){
-		// declare the List we are going to return
-		List<String> flattenList = new LinkedList <String> ();
+	// I didn't use addAll version because this method can save a little running time.
+	// even though that is more intuitive
+	public void flatten(List<String> flattenList){
 		// if the right child is not null, get to the right child
 		if (this.getLeftChild() != null) {
-			flattenList.addAll(this.getLeftChild().flatten());
+			this.getLeftChild().flatten(flattenList);
 		}
 		// add the current node value to the flattern list
 		flattenList.add(this.value);
 
 		// if the left child is not null, get to the right child
 		if (this.getRightChild() != null) {
-			flattenList.addAll(this.getRightChild().flatten());
+			this.getRightChild().flatten(flattenList);
 		}
-
-
-		// return the flattenList
-		return flattenList;
 	}
+
+	// // flattern method, which will contain its' children nodes values
+	// public List<String> flatten(){
+	// 	// declare the List we are going to return
+	// 	List<String> flattenList = new LinkedList <String> ();
+	// 	// if the right child is not null, get to the right child
+	// 	if (this.getLeftChild() != null) {
+	// 		flattenList.addAll(this.getLeftChild().flatten());
+	// 	}
+	// 	// add the current node value to the flattern list
+	// 	flattenList.add(this.value);
+
+	// 	// if the left child is not null, get to the right child
+	// 	if (this.getRightChild() != null) {
+	// 		flattenList.addAll(this.getRightChild().flatten());
+	// 	}
+
+
+	// 	// return the flattenList
+	// 	return flattenList;
+	// }
 
 	// toString
 	public String toString(){
