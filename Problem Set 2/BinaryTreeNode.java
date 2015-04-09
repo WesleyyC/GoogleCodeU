@@ -49,7 +49,7 @@ public class BinaryTreeNode{
 			this.getLeftChild().flatten(flattenList);
 		}
 		// add the current node value to the flattern list
-		flattenList.add(this.value);
+		flattenList.add(this.toString());
 
 		// if the left child is not null, get to the right child
 		if (this.getRightChild() != null) {
