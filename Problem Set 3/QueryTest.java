@@ -38,7 +38,5 @@ public class QueryTest{
 		// code
 		// u
 		// program
-
-
 	}
 }
