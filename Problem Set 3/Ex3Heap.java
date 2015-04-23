@@ -11,38 +11,43 @@
 // However, to implement heap in java, i think the only option will be PriorityQueue.
 // While it gives us O(log(n)) time for enqueu/dequeue, 
 // I am not sure how efficiency it is for the initial construction
-// So we might need to implment this ourselves,
-// and since this is a very interesting problem,
-// I might implment such heap myself, if there is more time.
+// So now I have time, I implement my own heap and here we go
 
 // remember to import!!!!!
 import java.util.*;
 
-public class Ex3{
+public class Ex3Heap{
 
 	// array field
-	private int[] orderedArray;
+	private int[] unorderedArray;
+	// the partial sort heap
+	private Heap theHeap;
 
-	public Ex3(int[] unorderedArray){
-
-		// the array is an object so no return!!!!!
-		Arrays.sort(unorderedArray);
+	public Ex3Heap(int[] unorderedArray){
 
 		// pass the sort unorderd Array to the field
-		this.orderedArray = unorderedArray;
+		this.unorderedArray = unorderedArray;
+		// build the heap
+		theHeap = new Heap(this.unorderedArray);
 	}
 
 	// the nthLargest number
 	public int nthLargest(int n){
 
 		// check range
-		if(n<1 || n>orderedArray.length){
+		if(n<1 || n>this.theHeap.size()){
 			throw new IllegalArgumentException("range must be > 0 and < the length");
 		}
 
-		// the array is from smallest to the largest 
-		// and n=1 is suppose to return the largest
-		return this.orderedArray[orderedArray.length-n];
+		int theOne=0;
+		// keep poping until we get to the largest nth.
+		while(n>0){
+			theOne = theHeap.popLargest();
+			n--;	// decrement n
+		}
+
+		return theOne;
+
 	}
 
 
