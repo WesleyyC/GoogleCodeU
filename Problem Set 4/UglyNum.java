@@ -10,6 +10,11 @@
 // run test mode by 
 // java -ea UglyNum
 
+// so a faster way to this is similar to what I have done
+// but instead of putting everying in a same queue
+// you use three queue to represent 2,3,5 so that you can be sure that the queue is actually ordered
+
+
 import java.util.Arrays;
 
 public class UglyNum{
@@ -63,11 +68,11 @@ public class UglyNum{
 	// by checking the remainder for 2, 3 and 5;
 	// if it is divisible by either 2, 3 or 5, return true;
 	public static boolean uglyCheck(int n){
-		if(n%2==0){
+		if(n%2!=0){
 			return true;
-		}else if(n%3==0){
+		}else if(n%3!=0){
 			return true;
-		}else if(n%5==0){
+		}else if(n%5!=0){
 			return true;
 		}else{
 			return false;

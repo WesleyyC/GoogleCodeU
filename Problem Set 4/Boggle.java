@@ -3,6 +3,8 @@
 // Google Code U
 // May-15-15
 
+// Check word from a Boggle board should be faster with a whole Dictionary
+
 import java.util.*;
 
 public class Boggle{
