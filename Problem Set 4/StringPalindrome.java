@@ -4,6 +4,9 @@
 // May-14-15
 // Using O(n^2) space to ahcience an O(n^2) time efficiency
 
+// run test mode by 
+// java -ea StringPalindrome
+
 public class StringPalindrome{
 
 	public static void main(String[] args) {
@@ -59,7 +62,7 @@ public class StringPalindrome{
 		}
 
 		// build a table that support dynamic programming
-		// and only modify the upper left corner
+		// and only modify the upper right corner
 		boolean[][] palindromeTable = new boolean[strLength][strLength];
 
 		// diagnol is always true since O(n)
