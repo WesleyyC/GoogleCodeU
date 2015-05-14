@@ -9,9 +9,27 @@ import java.util.Arrays;
 
 public class ReturnChange{
 	public static void main(String[] args) {
-		int[] change = {1,2};
-		int total = 3;
-		System.out.println(wayToCount(change,total));
+		
+		// Test 1
+		int[] change1 = {1,2};
+		int total1 = 3;
+		int count1 = wayToCount(change1,total1);
+		System.out.println(count1);
+		assert count1==2 : "the first test should be 2";
+
+		// Test 2
+		int[] change2 = {2,3,5};
+		int total2 = 10;
+		int count2 = wayToCount(change2,total2);
+		System.out.println(count2);
+		assert count2==4 : "the second test should be 4";
+
+		// Test 1
+		int[] change3 = {2,3,5};
+		int total3 = 1;
+		int count3 = wayToCount(change3,total3);
+		System.out.println(count3);
+		assert count3==0 : "the third test should be 0";
 	}
 
 	// i don't really need this method, but I want to make sure that
